@@ -13,3 +13,18 @@ config_version=5
 config/name="Asteroids Clone"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[input]
+
+turn_left={
+"deadzone": 0.5,
+"events": []
+}
+turn_right={
+"deadzone": 0.5,
+"events": []
+}
+move_forward={
+"deadzone": 0.5,
+"events": []
+}
