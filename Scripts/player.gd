@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-
-@export var speed = 400.0
-@export var rotation_speed = 1.5
+@export var acceleration = 0.025
+@export var max_speed = 600.0
+@export var rotation_speed = 2.0
 
 func _physics_process(delta: float) -> void:
 
@@ -10,8 +10,8 @@ func _physics_process(delta: float) -> void:
 	rotation += rotation_direction * rotation_speed * delta
 	
 	if Input.is_action_pressed("move_forward"):
-		velocity = transform.x * speed
+			velocity = velocity.lerp(transform.x * max_speed, acceleration)
 	else:
-		velocity.lerp(Vector2.ZERO, 500)
+		velocity = velocity.lerp(Vector2.ZERO, acceleration)
 		
 	move_and_slide()
