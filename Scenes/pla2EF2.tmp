@@ -9,9 +9,7 @@ script = ExtResource("1_gwsf2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 rotation = 1.5708
-scale = Vector2(4, 4)
 texture = ExtResource("2_pkr8g")
 hframes = 8
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
