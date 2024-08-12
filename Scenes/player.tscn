@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw1kgknlwmo15"]
+[gd_scene load_steps=4 format=3 uid="uid://cw1kgknlwmo15"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_gwsf2"]
+[ext_resource type="PackedScene" uid="uid://bew4ypkl1movk" path="res://Scenes/bullet.tscn" id="2_bhlbl"]
 [ext_resource type="Texture2D" uid="uid://byeawipjv7y0t" path="res://Assets/playership.png" id="2_pkr8g"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gwsf2")
+bullet = ExtResource("2_bhlbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 rotation = 1.5708
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 texture = ExtResource("2_pkr8g")
 hframes = 8
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(31, 0)
