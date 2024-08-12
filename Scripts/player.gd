@@ -6,7 +6,8 @@ extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _physics_process(delta: float) -> void:
-	sprite_2d.frame = abs(int((rotation_degrees + 360) / 45)) - 4
+	#changing the frame to give a lighting effect
+	sprite_2d.frame = wrapi((abs(int((rotation_degrees + 360) / 45)) - 6), 0, 8)
 	
 	var rotation_direction := Input.get_axis("turn_left", "turn_right")
 	rotation += rotation_direction * rotation_speed * delta
