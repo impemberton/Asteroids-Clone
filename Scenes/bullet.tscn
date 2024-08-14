@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://l2ov0dqspuye" path="res://Assets/Bullet.png" id="2_mieh0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lbla3"]
-radius = 6.0
-height = 20.0
+radius = 3.0
+height = 10.0
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_urv5b")

@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2ddawc2p8np3"]
+[gd_scene load_steps=3 format=3 uid="uid://c2ddawc2p8np3"]
 
 [ext_resource type="PackedScene" uid="uid://cw1kgknlwmo15" path="res://Scenes/player.tscn" id="1_1stw5"]
+[ext_resource type="PackedScene" uid="uid://sn8n2tyor1ad" path="res://Scenes/meteor_container.tscn" id="2_x01ax"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_1stw5")]
 position = Vector2(298, 175)
+
+[node name="MeteorContainer" parent="." instance=ExtResource("2_x01ax")]
