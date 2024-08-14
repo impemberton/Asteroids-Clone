@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 @export var acceleration = 0.025
 @export var max_speed = 600.0
-@export var rotation_speed = 2.0
+@export var rotation_speed = 2.5
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var bullet_spawn_point: Marker2D = $BulletSpawnPoint
 @export var bullet: PackedScene
 
+signal player_death
 
 func _physics_process(delta: float) -> void:
 	
@@ -36,3 +37,5 @@ func shoot():
 	new_bullet.direction = transform.x
 	add_child(new_bullet)
 	
+func take_damage():
+	player_death.emit()

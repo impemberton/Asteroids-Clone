@@ -10,4 +10,32 @@ meteor = ExtResource("1_oimq5")
 [node name="Meteor" parent="." instance=ExtResource("1_oimq5")]
 position = Vector2(476, 184)
 
+[node name="Meteor2" parent="." instance=ExtResource("1_oimq5")]
+position = Vector2(397, 90)
+
+[node name="Meteor3" parent="." instance=ExtResource("1_oimq5")]
+position = Vector2(228, 112)
+
+[node name="Meteor4" parent="." instance=ExtResource("1_oimq5")]
+position = Vector2(791, 111)
+
+[node name="Meteor5" parent="." instance=ExtResource("1_oimq5")]
+position = Vector2(747, 318)
+
+[node name="Meteor6" parent="." instance=ExtResource("1_oimq5")]
+position = Vector2(436, 358)
+
+[node name="Meteor7" parent="." instance=ExtResource("1_oimq5")]
+position = Vector2(255, 359)
+
+[node name="Meteor8" parent="." instance=ExtResource("1_oimq5")]
+position = Vector2(634, 255)
+
 [connection signal="split" from="Meteor" to="." method="create_meteor"]
+[connection signal="split" from="Meteor2" to="." method="create_meteor"]
+[connection signal="split" from="Meteor3" to="." method="create_meteor"]
+[connection signal="split" from="Meteor4" to="." method="create_meteor"]
+[connection signal="split" from="Meteor5" to="." method="create_meteor"]
+[connection signal="split" from="Meteor6" to="." method="create_meteor"]
+[connection signal="split" from="Meteor7" to="." method="create_meteor"]
+[connection signal="split" from="Meteor8" to="." method="create_meteor"]

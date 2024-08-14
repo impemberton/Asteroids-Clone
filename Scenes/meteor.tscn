@@ -4,14 +4,17 @@
 [ext_resource type="Script" path="res://Scripts/meteor.gd" id="1_vc372"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbiav"]
-radius = 7.07107
+radius = 12.1655
 
 [node name="Meteor" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_vc372")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(2, 2)
 texture = ExtResource("1_bsi0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qbiav")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
