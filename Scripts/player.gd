@@ -11,6 +11,8 @@ extends CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	
+	global_position = Vector2(wrapf(global_position.x, -10, 1162),wrapf(global_position.y, -10, 658))
+	
 	#changing the frame to give a lighting effect
 	sprite_2d.frame = wrapi((abs(int((rotation_degrees + 202.5) / 45)) - 2), 0, 8)
 	

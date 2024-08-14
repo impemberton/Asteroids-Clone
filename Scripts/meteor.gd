@@ -8,6 +8,7 @@ var health: int = 4
 
 
 func _physics_process(delta: float) -> void:
+	global_position = Vector2(wrapf(global_position.x, -10, 1162),wrapf(global_position.y, -10, 658))
 	position += direction * speed * delta
 
 func take_damage():
