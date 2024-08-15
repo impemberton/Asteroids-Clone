@@ -1,7 +1,7 @@
 extends Area2D
 
 signal split(pos, health, repeat)
-var rotation_speed = randf_range(-2,2)
+var rotation_speed = randf_range(-3,3)
 var direction: Vector2 = Vector2.UP
 @export var speed: float = 50.0
 var health: int = 4
@@ -10,10 +10,11 @@ var health: int = 4
 
 func _physics_process(delta: float) -> void:
 	sprite_2d.frame = wrapi((abs(int((rotation_degrees + 202.5) / 45))-4), 0, 8)
-
 	global_position = Vector2(wrapf(global_position.x, -10, 1162),wrapf(global_position.y, -10, 658))
 	position += direction * speed * delta
-	rotation_degrees += rotation_speed
+	rotation_degrees = wrapf(rotation_degrees + rotation_speed, -180, 180) 
+	
+	
 func take_damage():
 	health -= 1
 	if health > 0:
