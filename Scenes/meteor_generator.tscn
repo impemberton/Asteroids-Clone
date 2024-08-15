@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://sn8n2tyor1ad"]
+
+[ext_resource type="Script" path="res://Scripts/meteor_container.gd" id="1_byi6y"]
+[ext_resource type="PackedScene" uid="uid://dg64m0r4j6ll4" path="res://Scenes/meteor.tscn" id="1_oimq5"]
+
+[sub_resource type="Curve2D" id="Curve2D_yw0du"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 648, 0, 0, 0, 0, 0, 648, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="MeteorGenerator" type="Node2D"]
+script = ExtResource("1_byi6y")
+meteor = ExtResource("1_oimq5")
+
+[node name="MeteorContainer" type="Node2D" parent="."]
+
+[node name="Meteor" parent="MeteorContainer" instance=ExtResource("1_oimq5")]
+position = Vector2(791, 111)
+
+[node name="MeteorSpawnLine" type="Path2D" parent="."]
+curve = SubResource("Curve2D_yw0du")
+
+[node name="MeteorSpawner" type="PathFollow2D" parent="MeteorSpawnLine"]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="split" from="MeteorContainer/Meteor" to="." method="create_meteor"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cw1kgknlwmo15" path="res://Scenes/player.tscn" id="1_1stw5"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_pfkdd"]
-[ext_resource type="PackedScene" uid="uid://sn8n2tyor1ad" path="res://Scenes/meteor_container.tscn" id="2_x01ax"]
+[ext_resource type="PackedScene" uid="uid://sn8n2tyor1ad" path="res://Scenes/meteor_generator.tscn" id="2_x01ax"]
 [ext_resource type="Texture2D" uid="uid://b5kh2yjs0adly" path="res://Assets/StarryBGPurple.png" id="3_4lrjp"]
 [ext_resource type="Script" path="res://Scripts/Background.gd" id="3_b2g3c"]
 
@@ -12,7 +12,7 @@ script = ExtResource("1_pfkdd")
 [node name="Player" parent="." instance=ExtResource("1_1stw5")]
 position = Vector2(298, 175)
 
-[node name="MeteorContainer" parent="." instance=ExtResource("2_x01ax")]
+[node name="MeteorGenerator" parent="." instance=ExtResource("2_x01ax")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2(1.28, 0)

@@ -3,7 +3,7 @@ extends Area2D
 signal split(pos, health, repeat)
 var rotation_speed = randf_range(-3,3)
 var direction: Vector2 = Vector2.UP
-@export var speed: float = 50.0
+@export var speed: float = randf_range(50, 300)
 var health: int = 4
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
