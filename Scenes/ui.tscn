@@ -1,0 +1,97 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5i8nbmdx8voo"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_4pcnq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b0oai"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8vt6"]
+font_size = 40
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4pcnq")
+
+[node name="Score Label" type="Label" parent="."]
+layout_mode = 1
+offset_right = 52.0
+offset_bottom = 23.0
+text = "Score: "
+
+[node name="Lives Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Lives:"
+
+[node name="GameOverMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOverMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0470588, 0.0470588, 0.658824)
+
+[node name="Menu" type="VBoxContainer" parent="GameOverMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -60.0
+offset_right = 168.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="GameOverLabel" type="Label" parent="GameOverMenu/Menu"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_b0oai")
+horizontal_alignment = 1
+
+[node name="GameOverScoreLabel" type="Label" parent="GameOverMenu/Menu"]
+layout_mode = 2
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_b8vt6")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="GameOverMenu/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="RetryButton" type="Button" parent="GameOverMenu/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="GameOverMenu/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="pressed" from="GameOverMenu/Menu/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="GameOverMenu/Menu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

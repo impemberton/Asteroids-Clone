@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2ddawc2p8np3"]
+[gd_scene load_steps=7 format=3 uid="uid://c2ddawc2p8np3"]
 
 [ext_resource type="PackedScene" uid="uid://cw1kgknlwmo15" path="res://Scenes/player.tscn" id="1_1stw5"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_pfkdd"]
 [ext_resource type="PackedScene" uid="uid://sn8n2tyor1ad" path="res://Scenes/meteor_generator.tscn" id="2_x01ax"]
 [ext_resource type="Texture2D" uid="uid://b5kh2yjs0adly" path="res://Assets/StarryBGPurple.png" id="3_4lrjp"]
 [ext_resource type="Script" path="res://Scripts/Background.gd" id="3_b2g3c"]
+[ext_resource type="PackedScene" uid="uid://c5i8nbmdx8voo" path="res://Scenes/ui.tscn" id="6_3os18"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_pfkdd")
@@ -31,5 +32,9 @@ position = Vector2(562, 318)
 texture = ExtResource("3_4lrjp")
 region_enabled = true
 region_rect = Rect2(-358.945, -113.438, 1188.62, 782.285)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UILayer" instance=ExtResource("6_3os18")]
 
 [connection signal="player_death" from="Player" to="." method="_on_player_death"]

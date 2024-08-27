@@ -15,9 +15,6 @@ meteor = ExtResource("1_oimq5")
 
 [node name="MeteorContainer" type="Node2D" parent="."]
 
-[node name="Meteor" parent="MeteorContainer" instance=ExtResource("1_oimq5")]
-position = Vector2(791, 111)
-
 [node name="MeteorSpawnLine" type="Path2D" parent="."]
 curve = SubResource("Curve2D_yw0du")
 
@@ -27,5 +24,4 @@ curve = SubResource("Curve2D_yw0du")
 wait_time = 5.0
 autostart = true
 
-[connection signal="split" from="MeteorContainer/Meteor" to="." method="create_meteor"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
