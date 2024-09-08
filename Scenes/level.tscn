@@ -38,3 +38,4 @@ region_rect = Rect2(-358.945, -113.438, 1188.62, 782.285)
 [node name="UI" parent="UILayer" instance=ExtResource("6_3os18")]
 
 [connection signal="player_death" from="Player" to="." method="_on_player_death"]
+[connection signal="add_score" from="MeteorGenerator" to="." method="_on_meteor_generator_add_score"]

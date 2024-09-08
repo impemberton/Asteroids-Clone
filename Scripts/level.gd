@@ -26,3 +26,6 @@ func _ready() -> void:
 
 func _on_player_death() -> void:
 	lives -= 1
+
+func _on_meteor_generator_add_score(new_score: int) -> void:
+	score += new_score
