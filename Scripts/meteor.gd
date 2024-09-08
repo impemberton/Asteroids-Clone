@@ -1,6 +1,8 @@
 extends Area2D
 
 signal split(pos, health, repeat)
+signal add_score(score)
+
 var rotation_speed = randf_range(-3,3)
 var direction: Vector2 = Vector2.UP
 @export var speed: float = randf_range(50, 300)
@@ -17,8 +19,9 @@ func _physics_process(delta: float) -> void:
 	
 func take_damage():
 	health -= 1
+	add_score.emit(50)
 	if health > 0:
-		split.emit(global_position, health, true)
+		split.emit(global_position, health, true, 50)
 	queue_free()	
 
 func _on_body_entered(body: Node2D) -> void:
